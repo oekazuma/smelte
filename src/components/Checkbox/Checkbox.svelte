@@ -10,6 +10,7 @@
 
   export let value = "";
   export let label = "";
+  export let group = "";
   export let color = "primary";
   export let checked = false;
   export let disabled = false;
@@ -40,7 +41,7 @@
 
 <div class={className}>
   <div class={c} on:click={check}>
-    <input bind:checked class="hidden" type="checkbox" on:change {value} />
+    <input bind:checked class="hidden" type="checkbox" bind:group={group} {value} />
     <div class="relative w-auto h-auto z-0">
       <Ripple color={rippleColor}>
         {#if checked}
